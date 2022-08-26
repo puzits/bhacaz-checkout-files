@@ -6,7 +6,11 @@ const token = core.getInput('token');
 const octokit = github.getOctokit(token)
 
 const files = core.getInput('files', { required: true }).split(' ');
-const repository = core.getInput('respository');
+const repository =  core.getInput('respository');
+
+if( repository != ""){
+    repository = process.env['GITHUB_REPOSITORY']
+}
 
 const owner = repository.split('/')[0]
 const repo = repository.split('/')[1]
