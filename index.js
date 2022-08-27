@@ -8,7 +8,7 @@ const octokit = github.getOctokit(token)
 const files = core.getInput('files', { required: true }).split(' ');
 let repository =  core.getInput('respository');
 
-if( repository != ""){
+if( repository == ""){
     repository = process.env['GITHUB_REPOSITORY']
 }
 
