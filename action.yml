@@ -13,13 +13,14 @@ inputs:
   token:
     description: 'A Github Private Access Token'
     default: ${{ github.token }}
+    required: false
   branch:
     description: 'Branch to checkout files from'
     required: false
   repository:
-   description: 'Repository to checkout'
-   required: true
-   
+    description: 'Repository to checkout'
+    required: false
+
 runs:
   using: 'node16'
   main: 'index.js'
