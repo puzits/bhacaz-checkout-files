@@ -11,7 +11,7 @@ let repository =  core.getInput('respository');
 console.log(repository)
 
 if( repository == ""){
-    repository = process.env['GITHUB_REPOSITORY']
+    repository = "Icertis-Engineering/ici-devops"
 }
 
 const owner = repository.split('/')[0]
