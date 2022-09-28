@@ -1,4 +1,4 @@
-name: 'checkout-files-with-repo'
+name: 'checkout-files-repo'
 description: 'Checkout only certain files'
 author: 'Puzits'
 
