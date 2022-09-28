@@ -19,7 +19,6 @@ inputs:
     required: false
   repository:
     description: 'Repository to checkout
-    default: 'Icertis-Engineering/ici-devops-deployment'
     required: false
 
 runs:
