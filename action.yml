@@ -18,7 +18,7 @@ inputs:
     description: 'Branch to checkout files from'
     required: false
   repository:
-    description: 'Repository to checkout
+    description: 'Repository to checkout'
     required: false
 
 runs:
