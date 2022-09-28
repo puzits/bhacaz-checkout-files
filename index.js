@@ -8,12 +8,6 @@ const octokit = github.getOctokit(token)
 const files = core.getInput('files', { required: true }).split(' ');
 let repository =  core.getInput('respository');
 
-console.log(repository)
-
-if( repository == ""){
-    repository = "Icertis-Engineering/ici-devops"
-}
-
 const owner = repository.split('/')[0]
 const repo = repository.split('/')[1]
 const ref = core.getInput('branch');
