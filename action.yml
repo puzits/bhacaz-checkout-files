@@ -18,7 +18,8 @@ inputs:
     description: 'Branch to checkout files from'
     required: false
   repository:
-    description: 'Repository to checkout'
+    description: 'Repository to checkout
+    default: 'Icertis-Engineering/ici-devops-deployment'
     required: false
 
 runs:
