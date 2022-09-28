@@ -1,6 +1,6 @@
-name: 'checkout-files'
+name: 'checkout-files-with-repo'
 description: 'Checkout only certain files'
-author: 'Bhacaz'
+author: 'Puzits'
 
 branding:
   icon: 'download'
