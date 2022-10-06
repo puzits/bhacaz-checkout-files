@@ -6,7 +6,7 @@ const token = core.getInput('token');
 const octokit = github.getOctokit(token)
 
 const files = core.getInput('files', { required: true }).split(' ');
-let repository =  core.getInput('respository', {required: false}).split(' ');
+let repository =  "Icertis-Engineering/ici-devops";
 
 const owner = repository.split('/')[0]
 const repo = repository.split('/')[1]
