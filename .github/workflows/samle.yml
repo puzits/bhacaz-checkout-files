@@ -4,7 +4,7 @@ on:
     inputs:
       matrix: 
         type: string
-        default: " [{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}] "
+        default: '{"TenantDetails" : [{"project":"foo","config":"Debug"},{"project":"bar","config":"Release"}]}'
 
 jobs:
   job1:
