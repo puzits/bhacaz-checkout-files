@@ -4,7 +4,7 @@ on:
     inputs:
       matrix: 
         type: string
-        default: "{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+        default: "[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]"
 
 jobs:
   job1:
@@ -13,14 +13,14 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - id: set-matrix
-        run: echo "matrix=${{ inputs.matrix}}" >> $GITHUB_OUTPUT
+        run: echo "matrix={\"include\":${{ inputs.matrix}}}" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
+    needs: job1
     strategy:
-      matrix: ${{ fromJSON(inputs.matrix) }}
+      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
     env:
       project: ${{ matrix.project }}
       config: ${{ matrix.config }}
-      matrix: ${{ matrix }}
     steps:
      - run: echo ${{ matrix.project }}
