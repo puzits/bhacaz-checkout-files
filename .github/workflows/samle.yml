@@ -4,7 +4,7 @@ on:
     inputs:
       matrix: 
         type: string
-        default: "{[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+        default: "{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
 
 jobs:
   job1:
@@ -18,5 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{ fromJSON(inputs.matrix) }}
+    env:
+      project: ${{ matrix.project }}
+      config: ${{ matrix.config }}
     steps:
-     - run: echo ${{ matrix.project }} ${{ matrix.config }}
+     - run: echo ${{ matrix.project }}
