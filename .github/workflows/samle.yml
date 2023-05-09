@@ -16,9 +16,8 @@ jobs:
         run: echo "matrix={\"include\":${{ inputs.matrix}}}" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
-    needs: job1
     strategy:
-      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
+      matrix: ${{ fromJSON(inputs.matrix) }}
     env:
       project: ${{ matrix.project }}
       config: ${{ matrix.config }}
