@@ -4,7 +4,7 @@ on:
     inputs:
       matrix: 
         type: string
-        default: "{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+        default: "{[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
 
 jobs:
   job1:
