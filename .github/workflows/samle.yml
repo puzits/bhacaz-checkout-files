@@ -21,5 +21,6 @@ jobs:
     env:
       project: ${{ matrix.project }}
       config: ${{ matrix.config }}
+      matrix: ${{ matrix }}
     steps:
      - run: echo ${{ matrix.project }}
