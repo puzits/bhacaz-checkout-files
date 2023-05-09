@@ -18,5 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{ fromJSON(inputs.matrix) }}
+    env: 
+      project: ${{ matrix.project }}
+      config: ${{ matrix.config }}
+      object: ${{ matrix }}
     steps:
-     - run: build
+     - run: echo 
