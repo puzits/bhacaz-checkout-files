@@ -15,7 +15,6 @@ jobs:
       - id: set-matrix
         run: echo "matrix=${{ inputs.matrix}}" >> $GITHUB_OUTPUT
   job2:
-    needs: job1
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{ fromJSON(inputs.matrix) }}
